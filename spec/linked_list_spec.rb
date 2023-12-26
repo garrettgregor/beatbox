@@ -11,5 +11,13 @@ RSpec.describe LinkedList do
         expect(list.head).to eq(nil)
       end
     end
+
+    context "#append" do
+      it "adds a node to the linked list" do
+        list.append("doop")
+        
+        expect(list.head.data).to eq("doop")
+      end
+    end
   end
 end
