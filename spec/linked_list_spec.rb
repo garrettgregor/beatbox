@@ -74,5 +74,15 @@ RSpec.describe LinkedList do
         expect(list.new_node(string)).to be_a(Node)
       end
     end
+
+    context "#empty?" do
+      it "returns a boolean value if the the head is nil" do
+        expect(list.empty?).to eq(true)
+
+        list.append("doop")
+
+        expect(list.empty?).to eq(false)
+      end
+    end
   end
 end
