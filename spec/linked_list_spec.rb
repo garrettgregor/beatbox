@@ -99,5 +99,17 @@ RSpec.describe LinkedList do
         expect(list.head.next_node.tail?).to eq(true)
       end
     end
+
+    context "#last_node" do
+      it "returns the last node" do
+        list.append("doop")
+
+        expect(list.last_node(list.head).data).to eq("doop")
+
+        list.append("deep")
+
+        expect(list.last_node(list.head).data).to eq("deep")
+      end
+    end
   end
 end
