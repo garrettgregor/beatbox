@@ -62,8 +62,16 @@ RSpec.describe LinkedList do
     context "#count_node" do
       it "counts individual nodes" do
         node = Node.new("doop")
-        
+
         expect(list.count_node(node, 1)).to eq(1)
+      end
+    end
+
+    context "#new_node" do
+      it "creates new nodes" do
+        string = "doop"
+
+        expect(list.new_node(string)).to be_a(Node)
       end
     end
   end
