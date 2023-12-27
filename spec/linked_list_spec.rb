@@ -84,5 +84,20 @@ RSpec.describe LinkedList do
         expect(list.empty?).to eq(false)
       end
     end
+
+    context "#set_tail" do
+      it "sets the tail of the list" do
+        list.append("doop")
+
+        expect(list.count).to eq(1)
+
+        list.set_tail("deep")
+
+        expect(list.count).to eq(2)
+        expect(list.head.tail?).to eq(false)
+        expect(list.head.next_node.data).to eq("deep")
+        expect(list.head.next_node.tail?).to eq(true)
+      end
+    end
   end
 end
